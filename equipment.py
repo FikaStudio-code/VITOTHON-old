@@ -100,3 +100,10 @@ class Bridge(Equipment):
 
     def assignip(self, ip, mask):
         jexec(self.name, "ifconfig vbridge0 inet {0} netmask {1}".format(ip, mask))
+
+class Server(Equipment):
+    def __init__(self, jailname):
+        super().__init__(jailname)
+
+    def assigngw(self, gw):
+        jexec(self.name, "route add default {0}".format(gw))

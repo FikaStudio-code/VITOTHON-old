@@ -44,6 +44,9 @@ class Operator:
     def setupbridge(self, jailname):
         exec("{0} = Bridge('{0}')".format(jailname), globals())
 
+    def setupserver(self,jailname):
+        exec("{0} = Server('{0}')".format(jailname), globals())
+
     def connect(self, obj, epair):
         exec("{0}.connect('{1}')".format(obj, epair))
         print("{0} is connected to {1}".format(epair, obj))
