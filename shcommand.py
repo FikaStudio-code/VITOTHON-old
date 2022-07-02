@@ -43,3 +43,7 @@ def mt_nullfs(path):
 def umt_nullfs(path):
     arg = "umount {0}/{1}/basejail".format(jails, path).split()
     subprocess.run(arg)
+
+def command(param):
+    arg = param.split()
+    subprocess.run(arg)
